@@ -1,0 +1,196 @@
+:root {
+    /* Color palette */
+    --cv-main-color: #3873b2;
+    --cv-secondary-color: #2e2a2a;
+    --cv-highlight-color: #ffffcc;
+    /* Constants */
+    --label-content-distance: 20px;
+    --line-shape-width: 120px;
+}
+
+/*  ==========================================================================
+    General styles
+    ========================================================================== */
+
+html {
+    background-color: var(--cv-secondary-color);
+    scroll-padding-top: 85px; /* Solução para navbar fixa horizontal cobrindo o conteúdo. */
+}
+body {
+    background-color: white;
+    margin: auto;
+    width: 800px;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+nav ul {
+    padding: 0;
+}
+h1, h2 {
+    font-family: 'Computer Modern Sans', sans;  
+}
+p, li, span {
+    font-family: 'Computer Modern Serif', 'DejaVu Math TeX Gyre', monospace, Times;
+}
+/*  ==========================================================================
+    Sitewide styles
+    ========================================================================== */
+
+.cv-section {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.cv-section-line {
+    width: var(--line-shape-width);
+    margin-right: 20px;
+}
+.cv-section-line hr {
+    color: var(--cv-main-color);
+    height: 6px;
+    background-color: var(--cv-main-color);
+}
+.cv-section-text {
+    color: var(--cv-main-color);
+}
+.cv-section-text h2 {
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+.cv-entry {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: row;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.cv-entry-label {
+    flex-basis: 120px;
+    margin-right: 20px;
+    text-align: right;
+}
+.cv-entry-label p {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.cv-entry-content {
+    flex-basis: 80%;
+    text-align: justify;
+}
+.cv-entry-content h2, h1 {
+    
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.cv-entry-content p {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+#profile_picture img {
+    width: 200px;
+}
+#profile {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 30px;
+}
+.social-links-list {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    list-style: none;
+    padding-left: 0;
+}
+.social-links-list li {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.menu-navbar {
+    position: fixed;
+    width: 800px;
+    background-color: var(--cv-main-color);
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+.menu-navbar ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.menu-navbar a {
+    color: white;
+}
+#cv-skills-list {
+    display: flex;
+    margin-left: calc(var(--line-shape-width) + var(--label-content-distance));
+}
+.cv-entry-content ul {
+    display: flex;
+    flex-flow: column wrap;
+    padding-left: var(--label-content-distance);
+}
+#tools {
+    margin-left: 80px;
+}
+.cv-footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--cv-main-color);
+    margin-top: 30px;
+}
+.cv-footer, .cv-footer a {
+    color: #ffffff;
+}
+a:hover {
+    background-color: var(--cv-highlight-color);
+    color: black;
+}
+
+/*  Media queries
+    ========================================================================== */
+@media screen and (max-width: 768px){
+    /* Mobile layout */
+    body {
+        padding-top: 85px;
+        width: 100%;
+        font-size: 0.8em;
+    }
+    .cv-section {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .cv-section-line {
+        width: calc(var(--line-shape-width)/2);
+    }
+    .cv-entry {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .cv-entry-label {
+        text-align: left;
+        flex-basis: 10px;
+    }
+    .menu-navbar {
+        width: 100%;
+        top: 0;
+        z-index: 9999;
+    }
+    .menu-navbar ul {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    #cv-skills-list {
+        margin-left: calc(var(--line-shape-width)/2);
+    }
+    #tools {
+        margin-left: 40px;
+    }
+}
