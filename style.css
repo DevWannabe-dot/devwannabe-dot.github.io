@@ -94,6 +94,12 @@ p, li, span {
     margin-bottom: 4px;
     width: fit-content;
 }
+.cv-entry-content .educational-institution {
+    font-size: calc(1.5em*(1.75/2));
+}
+.cv-entry-content .job-title {
+    font-size: 1.75em;
+}
 #profile_picture img {
     width: 200px;
 }
